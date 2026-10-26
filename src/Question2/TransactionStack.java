@@ -15,6 +15,22 @@ public class TransactionStack {
             throw new IllegalStateException("Stack overflow");
         }
         stack[++top] = c;
+    
+    public char pop() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Stack underflow");
+        }
+        return stack[top--];
     }
 
+    public char peek() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Stack is empty");
+        }
+        return stack[top];
+    }
+
+    public boolean isEmpty() {
+        return top == -1;
+    }
 }
